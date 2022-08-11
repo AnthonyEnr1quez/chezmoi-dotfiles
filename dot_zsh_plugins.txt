@@ -1,0 +1,3 @@
+# theme
+ohmyzsh/ohmyzsh
+ohmyzsh/ohmyzsh path:themes/crunch.zsh-theme
