@@ -2,6 +2,11 @@
 ohmyzsh/ohmyzsh
 ohmyzsh/ohmyzsh path:themes/crunch.zsh-theme
 
+# plugins
+ohmyzsh/ohmyzsh path:plugins/sudo
+zdharma-continuum/fast-syntax-highlighting
+zsh-users/zsh-completions
+zsh-users/zsh-history-substring-search
 
 # deferred plugins
 olets/zsh-abbr kind:defer
