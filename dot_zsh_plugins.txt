@@ -1,3 +1,7 @@
 # theme
 ohmyzsh/ohmyzsh
 ohmyzsh/ohmyzsh path:themes/crunch.zsh-theme
+
+
+# deferred plugins
+olets/zsh-abbr kind:defer

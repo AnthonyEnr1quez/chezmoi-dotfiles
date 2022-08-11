@@ -25,3 +25,6 @@ source $static_file
 
 # cleanup vars
 unset antidote_dir plugins_file static_file
+
+## setup abbr
+ABBR_USER_ABBREVIATIONS_FILE=~/.zsh_abbr
