@@ -50,3 +50,6 @@ setopt always_to_end # move cursor to end if word had one match
 # https://zsh.sourceforge.io/Doc/Release/Completion-System.html
 zstyle ':completion:*' menu select # use tab/arrows to select completion in menu
 zstyle ':completion:*' completer _expand _extensions _complete _ignored _approximate # enable approximate matches for completion
+
+## kube-ps1 support
+PROMPT='$(kube_ps1)'$PROMPT
