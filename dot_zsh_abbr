@@ -1,4 +1,5 @@
 # git
+abbr gcm="git commit -m"
 abbr gcam="git add . && git commit -m"
 abbr gf="git fetch --all"
 abbr gfo="git fetch origin && git checkout main && git rebase origin/main"
