@@ -1,5 +1,7 @@
 # theme
-ohmyzsh/ohmyzsh
+ohmyzsh/ohmyzsh path:lib/git.zsh
+ohmyzsh/ohmyzsh path:lib/prompt_info_functions.zsh
+ohmyzsh/ohmyzsh path:lib/theme-and-appearance.zsh
 ohmyzsh/ohmyzsh path:themes/crunch.zsh-theme
 
 # plugins
