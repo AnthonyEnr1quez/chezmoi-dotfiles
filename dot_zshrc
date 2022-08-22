@@ -8,7 +8,7 @@ zstyle ':antidote:bundle' use-friendly-names 'yes'
 # Clone antidote if necessary and generate a static plugin file.
 if [[ ! $static_file -nt $plugins_txt ]]; then
   [[ -e $antidote_dir ]] ||
-    git clone --depth=1 https://github.com/mattmc3/antidote.git $antidote_dir
+    git clone --depth=1 git@github.com:mattmc3/antidote.git $antidote_dir
   (
     source $antidote_dir/antidote.zsh
     [[ -e $plugins_txt ]] || touch $plugins_txt
