@@ -34,8 +34,8 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
 
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
 
 setopt hist_reduce_blanks # remove superfluous blanks from history items
 setopt inc_append_history # save history entries as soon as they are entered
@@ -50,6 +50,21 @@ setopt always_to_end # move cursor to end if word had one match
 # https://zsh.sourceforge.io/Doc/Release/Completion-System.html
 zstyle ':completion:*' menu select # use tab/arrows to select completion in menu
 zstyle ':completion:*' completer _expand _extensions _complete _ignored _approximate # enable approximate matches for completion
+
+# kubectl completions
+kubectl_completion_cache_dir=${ZDOTDIR:-~}/.cache/kubectl
+if (( $+commands[kubectl] )); then
+  # If the completion file does not exist, generate it and then source it
+  # Otherwise, source it and regenerate in the background
+  if [[ ! -f "$kubectl_completion_cache_dir/completions/_kubectl" ]]; then
+    mkdir -p $kubectl_completion_cache_dir/completions | kubectl completion zsh | tee "$kubectl_completion_cache_dir/completions/_kubectl" >/dev/null
+    source "$kubectl_completion_cache_dir/completions/_kubectl"
+  else
+    source "$kubectl_completion_cache_dir/completions/_kubectl"
+    kubectl completion zsh | tee "$kubectl_completion_cache_dir/completions/_kubectl" >/dev/null &|
+  fi
+fi
+unset kubectl_completion_cache_dir
 
 ## kube-ps1 support
 PROMPT='$(kube_ps1)'$PROMPT
