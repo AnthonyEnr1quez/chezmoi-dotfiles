@@ -68,3 +68,9 @@ unset kubectl_completion_cache_dir
 
 ## kube-ps1 support
 PROMPT='$(kube_ps1)'$PROMPT
+
+## temp, move to profile?, make quiet
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval `ssh-agent -s`
+  ssh-add ~/.ssh/id_ed25519_github
+fi

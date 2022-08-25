@@ -1,8 +1,21 @@
 [user]
-	email = 32233059+AnthonyEnr1quez@users.noreply.github.com
-	name = AnthonyEnr1quez
+    email = 32233059+AnthonyEnr1quez@users.noreply.github.com
+    name = AnthonyEnr1quez
+    signingKey = /home/ant/.ssh/id_ed25519_github.pub
 
-# delta
+[commit]
+    gpgsign = true
+    
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    allowedSignersFile = /home/ant/.config/git/allowed_signers
+
+[tag]
+    gpgsign = true
+
+## delta
 [core]
     pager = delta
 
